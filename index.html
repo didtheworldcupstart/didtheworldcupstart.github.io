@@ -5,11 +5,15 @@
     <body>
         <h1 id="response"/>
         <script type="text/javascript">
-            var d1 = new Date();
-            d1.setHours(0,0,0,0)
-            var d2 = new Date(2018,05,14,0,0,0,0);
-            if (d1.toString() === d2.toString())  {
-                document.getElementById('response').innerHTML = "The world cup started.";
+            var d1 = new Date().getTime();
+            var d2 = new Date(2018,05,14,15,0,0,0);
+            var d3 = new Date(2018,06,16,0,0,0,0);
+            if (d1 >= d2) {
+				if (d1 <= d3) {
+		            document.getElementById('response').innerHTML = "The world cup is on.";
+				} else {
+		            document.getElementById('response').innerHTML = "The world cup is over.";
+				}
             } else {
                 document.getElementById('response').innerHTML = "It is not the world cup yet.";
             }
